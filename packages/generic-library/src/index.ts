@@ -1,1 +1,1 @@
-export * from './lib/example-publishable-library.js';
+export * from './lib/example-publishable-library-fooo.js';
