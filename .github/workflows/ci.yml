@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npx nx-cloud start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build
+      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build
       - run: npm ci --legacy-peer-deps
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
@@ -32,5 +32,5 @@ jobs:
       - run: npx nx run-many -t lint test build
 
       # Nx Cloud recommends fixes for failures to help you get CI green faster. Learn more: https://nx.dev/ci/features/self-healing-ci
-      - run: npx nx fix-ci
+      - run: npx nx@latest fix-ci
         if: always()

@@ -1,2 +1,11 @@
 distribute-on:
   default: 1 linux-medium-js
+
+assignment-rules:
+  - targets:
+      - build
+      - lint*
+      - test*
+    run-on:
+      - agent: linux-medium-js
+        parallelism: 2
