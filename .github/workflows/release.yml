@@ -27,21 +27,19 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         shell: bash
 
       - name: Print Environment Info
         run: npx nx report
         shell: bash
 
-      - run: echo ${{ secrets.NPM_TOKEN }}
-
       - name: Publish packages
         run: npx nx release publish --access public
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+          NPM_CONFIG_PROVENANCE: ${{ github.repository_visibility == 'public'}}
 
       - name: AI Fix
         run: npx nx fix-ci
