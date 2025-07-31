@@ -1,11 +1,4 @@
 # example-publishable-library
 
-This library was generated with [Nx](https://nx.dev).
-
-## Building
-
-Run `nx build example-publishable-library` to build the library.
-
-## Running unit tests
-
-Run `nx test example-publishable-library` to execute the unit tests via [Jest](https://jestjs.io).
+This is an example package published with Nx.
+This is only for demo purposes and not useful for production means.
