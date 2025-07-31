@@ -47,6 +47,9 @@
   "release": {
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
+    },
+    "changelog": {
+      "workspaceChangelog": false
     }
   },
   "targetDefaults": {
