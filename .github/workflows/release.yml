@@ -14,6 +14,11 @@ jobs:
       id-token: write # needed for provenance data generation
     timeout-minutes: 10
     steps:
+      - name: testing env vars
+        run: |
+          echo ${{env.FOO_BAR}}
+          echo $FOO_BAR
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
