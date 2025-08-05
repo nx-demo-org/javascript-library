@@ -15,14 +15,12 @@
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "nxCloudUrl": "https://staging.nx.app",
-  "nxCloudId": "687e4c7f8851c58255df3a0a",
+  "nxCloudId": "689279a8c2f693fb92c47ee8",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
+        "typecheck": { "targetName": "typecheck" },
         "build": {
           "targetName": "build",
           "configName": "tsconfig.lib.json",
@@ -31,30 +29,12 @@
         }
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
   ],
   "release": {
-    "version": {
-      "preVersionCommand": "npx nx run-many -t build"
-    },
-    "changelog": {
-      "workspaceChangelog": false
-    }
+    "version": { "preVersionCommand": "npx nx run-many -t build" },
+    "changelog": { "workspaceChangelog": false }
   },
-  "targetDefaults": {
-    "test": {
-      "dependsOn": ["^build"]
-    }
-  }
+  "targetDefaults": { "test": { "dependsOn": ["^build"] } }
 }
