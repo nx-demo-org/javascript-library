@@ -1,5 +1,5 @@
 distribute-on:
-  default: 2 linux-medium-js
+  default: 3 linux-medium-js
 
 assignment-rules:
   - targets:
